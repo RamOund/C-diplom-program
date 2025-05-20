@@ -1,0 +1,27 @@
+﻿<Window x:Class="modulnik.ReasRem"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:modulnik"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        mc:Ignorable="d"
+        Title="ReasRem" Height="200" Width="350"
+        ResizeMode="NoResize"
+        WindowStartupLocation="CenterScreen"
+        WindowStyle="None">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <TextBlock VerticalAlignment="Top" HorizontalAlignment="Center" Text="Укажите причину удаления заказа" FontWeight="Bold" Margin="0,10,0,0" Height="16" Width="204"/>
+        <TextBox x:Name="reason_remote" Width="200" materialDesign:HintAssist.Hint="Причина" Style="{StaticResource MaterialDesignFloatingHintTextBox}" CaretBrush="#FF673AB7" SelectionBrush="#2096c4" Cursor="Arrow" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0,70,0,0" Height="37">
+            <TextBox.Resources>
+                <Style TargetType="{x:Type materialDesign:SmartHint}">
+                    <Setter Property="HorizontalAlignment" Value="Center"/>
+                </Style>
+            </TextBox.Resources>
+        </TextBox>
+        <Button  Width="200" VerticalAlignment="Bottom" HorizontalAlignment="Center" HorizontalContentAlignment="Center" Content="Подтвердить причину" Cursor="Hand" Margin="0,0,0,10" Click="Button_RemoteOrder" Style="{StaticResource MaterialDesignPaperLightButton}" ToolTip="Resource name: MaterialDesignPaperLightButton" IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}" BorderBrush="Green" Height="25" FontSize="10"/>
+    </Grid>
+</Window>

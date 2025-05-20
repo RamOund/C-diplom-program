@@ -1,0 +1,53 @@
+﻿<Window x:Class="modulnik.RemOrders"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:modulnik"
+        mc:Ignorable="d"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        Title="RemOrders" Height="1080" Width="1920"
+        ResizeMode="NoResize"
+        WindowStartupLocation="CenterScreen"
+        WindowState="Maximized">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="87*"/>
+            <RowDefinition Height="445*"/>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="140*"/>
+                <ColumnDefinition Width="140*"/>
+                <ColumnDefinition Width="140*"/>
+                <ColumnDefinition Width="140*"/>
+                <ColumnDefinition Width="1369*"/>
+            </Grid.ColumnDefinitions>
+        </Grid>
+        <Grid Margin="0,0,0,0" Grid.Row="1">
+            <DataGrid x:Name="dataGrid_RemOrders" IsReadOnly="True" AutoGenerateColumns="False" HorizontalAlignment="Center" Initialized="dataGrid_RemOrders_Initialized" CanUserResizeColumns="False" CanUserDeleteRows="False" CanUserReorderColumns="False">
+                <DataGrid.Resources>
+                    <Style BasedOn="{StaticResource {x:Type DataGridColumnHeader}}" TargetType="{x:Type DataGridColumnHeader}">
+                        <Setter Property="Background" Value="#3074f2" />
+                        <Setter Property="Foreground" Value="Black"/>
+                    </Style>
+                    <Style TargetType="TextBlock" x:Key="WrapText">
+                        <Setter Property="TextWrapping" Value="Wrap"/>
+                    </Style>
+                </DataGrid.Resources>
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Номер удаления" Binding="{Binding id_remote_order}"></DataGridTextColumn>
+                    <DataGridTextColumn Header="Фамилия клиента" Binding="{Binding surname}"></DataGridTextColumn>
+                    <DataGridTextColumn Header="Фамилия сотрудника" Binding="{Binding surname_employees}" CanUserSort="False"></DataGridTextColumn>
+                    <DataGridTextColumn Header="Адрес клиента" Binding="{Binding address_client}" CanUserSort="False"></DataGridTextColumn>
+                    <DataGridTextColumn Header="Название продукта" Binding="{Binding name_product}" CanUserSort="False"></DataGridTextColumn>
+                    <DataGridTextColumn Header="Дата удаления" Binding="{Binding rem_date, StringFormat='d.MM.yyyy hh:mm'}" CanUserSort="False"></DataGridTextColumn>
+                    <DataGridTextColumn Header="Причина удаления" Binding="{Binding re_reason}" Width="250" ElementStyle="{StaticResource WrapText}"></DataGridTextColumn>
+                </DataGrid.Columns>
+            </DataGrid>
+        </Grid>
+    </Grid>
+</Window>

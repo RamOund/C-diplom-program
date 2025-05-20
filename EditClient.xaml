@@ -1,0 +1,66 @@
+﻿<Window x:Class="modulnik.EditClient"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        xmlns:local="clr-namespace:modulnik"
+        mc:Ignorable="d"
+        WindowStartupLocation="CenterScreen"
+        ResizeMode="NoResize"
+        Title="EditClient" Height="425" Width="500">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="232*"/>
+            <ColumnDefinition Width="123*"/>
+            <ColumnDefinition Width="145*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="78*"/>
+            <RowDefinition Height="265*"/>
+            <RowDefinition Height="91*"/>
+        </Grid.RowDefinitions>
+        <TextBlock Text="Редактирование" TextAlignment="Center" FontSize="40" FontWeight="Bold" HorizontalAlignment="Left" VerticalAlignment="Center" Height="53" Margin="42,0,0,0" Width="416" Grid.ColumnSpan="3"/>
+        <Grid Margin="0,69,0,80" Grid.ColumnSpan="3" Grid.RowSpan="3">
+            <StackPanel Margin="0,20,0,20" HorizontalAlignment="Center" VerticalAlignment="Center">
+                <TextBox x:Name="surname" Width="400" materialDesign:HintAssist.Hint="Фамилия" Style="{StaticResource MaterialDesignFloatingHintTextBox}" CaretBrush="#FF673AB7" SelectionBrush="#2096c4" HorizontalAlignment="Center" Cursor="Arrow">
+                    <TextBox.Resources>
+                        <Style TargetType="{x:Type materialDesign:SmartHint}">
+                            <Setter Property="HorizontalAlignment" Value="Center"/>
+                        </Style>
+                    </TextBox.Resources>
+                </TextBox>
+                <TextBox x:Name="name" Width="400" materialDesign:HintAssist.Hint="Имя" Style="{StaticResource MaterialDesignFloatingHintTextBox}" CaretBrush="#FF673AB7" SelectionBrush="#2096c4" HorizontalAlignment="Center" Cursor="Arrow">
+                    <TextBox.Resources>
+                        <Style TargetType="{x:Type materialDesign:SmartHint}">
+                            <Setter Property="HorizontalAlignment" Value="Center"/>
+                        </Style>
+                    </TextBox.Resources>
+                </TextBox>
+                <TextBox x:Name="panthonimic" Width="400" materialDesign:HintAssist.Hint="Отчество" Style="{StaticResource MaterialDesignFloatingHintTextBox}" CaretBrush="#FF673AB7" SelectionBrush="#2096c4" HorizontalAlignment="Center" Cursor="Arrow">
+                    <TextBox.Resources>
+                        <Style TargetType="{x:Type materialDesign:SmartHint}">
+                            <Setter Property="HorizontalAlignment" Value="Center"/>
+                        </Style>
+                    </TextBox.Resources>
+                </TextBox>
+                <TextBox x:Name="tel_num" Width="400" materialDesign:HintAssist.Hint="Номер телефона" Style="{StaticResource MaterialDesignFloatingHintTextBox}" CaretBrush="#FF673AB7" SelectionBrush="#2096c4" HorizontalAlignment="Center" Cursor="Arrow">
+                    <TextBox.Resources>
+                        <Style TargetType="{x:Type materialDesign:SmartHint}">
+                            <Setter Property="HorizontalAlignment" Value="Center"/>
+                        </Style>
+                    </TextBox.Resources>
+                </TextBox>
+                <TextBox x:Name="email" Width="400" materialDesign:HintAssist.Hint="email" Style="{StaticResource MaterialDesignFloatingHintTextBox}" CaretBrush="#FF673AB7" SelectionBrush="#2096c4" HorizontalAlignment="Center" Cursor="Arrow">
+                    <TextBox.Resources>
+                        <Style TargetType="{x:Type materialDesign:SmartHint}">
+                            <Setter Property="HorizontalAlignment" Value="Center"/>
+                        </Style>
+                    </TextBox.Resources>
+                </TextBox>
+            </StackPanel>
+        </Grid>
+        <Button  Width="130" HorizontalAlignment="Center" HorizontalContentAlignment="Center" Content="Редактировать" Cursor="Hand" Margin="0,0,0,0" Grid.Column="2" Grid.Row="2" Style="{StaticResource MaterialDesignPaperLightButton}" ToolTip="Resource name: MaterialDesignPaperLightButton" IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}" BorderBrush="Green" Click="Button_EditClient"/>
+        <Button  Width="110" HorizontalAlignment="Center" HorizontalContentAlignment="Center" Content="Отмена" Cursor="Hand" Margin="0,0,0,0" Grid.Column="1" Grid.Row="2" Style="{StaticResource MaterialDesignPaperLightButton}" ToolTip="Resource name: MaterialDesignPaperLightButton" IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}" BorderBrush="Red" Click="Button_CancelClient"/>
+    </Grid>
+</Window>
